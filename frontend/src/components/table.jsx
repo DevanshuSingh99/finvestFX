@@ -120,7 +120,7 @@ function Table() {
                 sortable: true,
                 selector: (row) => row.price,
                 cell: (row, index, column, id) => {
-                    return <input type="number" value={row.price} id={row.id} onChange={(e) => onEdit(e)} />;
+                    return <Input type="number" value={row.price} id={row.id} onChange={(e) => onEdit(e)} />;
                 },
             },
             // {
@@ -213,5 +213,22 @@ const Filters = styled.div`
         background-color: white;
         padding: 5px 10px;
         border-radius: 5px;
+    }
+`;
+
+const Input = styled.input`
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+    :focus,
+    :active {
+        border-bottom: 2px solid rgb(31, 142, 241);
     }
 `;
